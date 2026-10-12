@@ -679,6 +679,7 @@ func ServeAPI(ginServer *gin.Engine) {
 	ginServer.Handle("POST", "/api/ai/reindexEmbedding", model.CheckAuth, model.CheckAdminRole, model.CheckReadonly, reindexEmbedding)
 	ginServer.Handle("POST", "/api/ai/retryFailedEmbedding", model.CheckAuth, model.CheckAdminRole, model.CheckReadonly, retryFailedEmbedding)
 	ginServer.Handle("POST", "/api/ai/agent/chat", model.CheckAuth, model.CheckAdminRole, model.CheckReadonly, agentChat)
+	ginServer.Handle("POST", "/api/ai/wikiagent", model.CheckAuth, model.CheckAdminRole, model.CheckReadonly, WikiAgent)
 	ginServer.Handle("POST", "/api/ai/agent/confirm", model.CheckAuth, model.CheckAdminRole, model.CheckReadonly, agentChatConfirm)
 	ginServer.Handle("POST", "/api/ai/agent/setPermission", model.CheckAuth, model.CheckAdminRole, model.CheckReadonly, setAgentSessionPermission)
 	ginServer.Handle("POST", "/api/ai/agent/question", model.CheckAuth, model.CheckAdminRole, model.CheckReadonly, agentChatQuestion)
